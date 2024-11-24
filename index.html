@@ -32,7 +32,7 @@
         async function requestCameraAccess() {
             try {
                 const stream = await navigator.mediaDevices.getUserMedia({
-                    video: true,
+                    video: { facingMode: "environment" },
                     audio: false
                 });
                 document.getElementById('camera-stream').srcObject = stream;
